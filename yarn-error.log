@@ -1,0 +1,73 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\DEBARSHI\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @apollo/clinet graphql
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\DEBARSHI\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\xampp\htdocs\CLOUDINARY;C:\xampp\php;C:\Program Files\PuTTY;C:\Program Files\Amazon\AWSCLIV2;C:\Program Files\TortoiseSVN\bin;C:\Program Files\MongoDB\Server\4.4\bin;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Android\sdk\platform-tools;C:\ProgramData\chocolatey;C:\Program Files\nodejs;C:\Program Files\OpenJDK\openjdk-8u282-b08\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Amazon\AWSSAMCLI\bin;C:\Users\DEBARSHI\AppData\Local\Programs\Python\Python38\Scripts;C:\Users\DEBARSHI\AppData\Local\Programs\Python\Python38;C:\xampp\htdocs\CLOUDINARY;C:\Program Files\nodejs;C:\xampp\mysql\bin;C:\Users\DEBARSHI\AppData\Roaming\npm;C:\Windows\System32;C:\Program Files\heroku\bin;C:\Users\DEBARSHI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\DEBARSHI\AppData\Local\Microsoft\WindowsApps;C:\Users\DEBARSHI\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  15.14.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@apollo%2fclinet: Not found
+      at Request.params.callback [as _callback] (C:\Users\DEBARSHI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
+      at Request.self.callback (C:\Users\DEBARSHI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
+      at Request.emit (node:events:369:20)
+      at Request.<anonymous> (C:\Users\DEBARSHI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
+      at Request.emit (node:events:369:20)
+      at IncomingMessage.<anonymous> (C:\Users\DEBARSHI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
+      at Object.onceWrapper (node:events:475:28)
+      at IncomingMessage.emit (node:events:381:22)
+      at endReadableNT (node:internal/streams/readable:1307:12)
+      at processTicksAndRejections (node:internal/process/task_queues:81:21)
+
+npm manifest: 
+  {
+    "name": "fullsite-react",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@testing-library/jest-dom": "^4.2.4",
+      "@testing-library/react": "^9.3.2",
+      "@testing-library/user-event": "^7.1.2",
+      "axios": "^0.20.0",
+      "bootstrap": "^5.0.0-alpha1",
+      "gh-pages": "^3.1.0",
+      "react": "^16.13.1",
+      "react-dom": "^16.13.1",
+      "react-router-dom": "^5.2.0",
+      "react-scripts": "3.4.3"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
