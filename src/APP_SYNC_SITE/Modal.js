@@ -13,6 +13,7 @@ const Modall = ({ show, setShow }) => {
   const [loginUser] = useMutation(LOGIN_USER);
   const [inputs, setInputs] = useState('');
   const [checkValid, setCheckValid] = useState(false);
+  const [btnDis, setBtnDis] = useState(false);
   var regex = /\S+@\S+\.\S+/;
 
 
@@ -29,7 +30,6 @@ const Modall = ({ show, setShow }) => {
       if (el.data && el.data.getUser) {
         const { email } = el.data.getUser;
         setCookie('authToken', email, { path: '/' });
-        setInputs('');
         toast.success('Logined Successfully!');
         if (show) {
           setTimeout(() => {
@@ -37,6 +37,7 @@ const Modall = ({ show, setShow }) => {
           }, 1000);
         }
       } else {
+        setBtnDis(true);
         toast.error('Login Failed! try again');
       }
     });
@@ -45,6 +46,7 @@ const Modall = ({ show, setShow }) => {
 
 
   useEffect(() => {
+    if (btnDis) setBtnDis(false);
     if (inputs && !regex.test(inputs)) {
       setCheckValid(true);
     }
@@ -75,7 +77,6 @@ const Modall = ({ show, setShow }) => {
               value={inputs}
               onChange={(e) => setInputs(e.target.value)}
               type="email"
-              required={true}
               className="form-control"
               style={{ borderColor: checkValid ? 'red' : 'gainsboro' }}
             />
@@ -87,7 +88,7 @@ const Modall = ({ show, setShow }) => {
         <Button style={{ padding: '5px 20px' }} variant="danger" type="button" onClick={() => setShow(false)}>
           <i className="fas fa-times fa-2x"></i>
         </Button>
-        <Button variant="primary" style={{ padding: '5px 15px' }} type="button" onClick={() => submit()}>
+        <Button disabled={btnDis} variant="primary" style={{ padding: '5px 15px' }} type="button" onClick={() => submit()}>
           <i className="fas fa-check fa-2x"></i></Button>
       </Modal.Footer>
     </Modal>
