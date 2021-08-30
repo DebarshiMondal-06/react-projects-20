@@ -81,6 +81,7 @@ const Modall = ({ show, setShow }) => {
               style={{ borderColor: checkValid ? 'red' : 'gainsboro' }}
             />
           </div>
+          <p className="font-weight-bold">Demo User: demo@mail.com</p>
         </article>
         <br />
       </Modal.Body>
