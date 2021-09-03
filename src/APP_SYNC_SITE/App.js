@@ -16,10 +16,10 @@ const App = () => {
 
 
   const client = new ApolloClient({
-    uri: 'https://u6zin6tv5zd4po5qxudgs6jvbu.appsync-api.ap-south-1.amazonaws.com/graphql',
+    uri: 'https://wta4olpru5an3oj3pnmtzizcri.appsync-api.ap-south-1.amazonaws.com/graphql',
     cache: new InMemoryCache(),
     headers: {
-      'x-api-key': "da2-kkm7z4jrlnho3dzjhrirpmnxje"
+      'x-api-key': "da2-tmdgl5gck5h5xmcnwh3ohwwngy"
     }
   });
 
