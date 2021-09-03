@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className="navbar-section">
       <nav className="navbar shadow navbar-expand-lg">
         <div className="container-fluid">
-          <Link to="/" className="navbar-brand">React - Vercel</Link>
+          <Link to="/" className="navbar-brand">AppSync - Vercel</Link>
           <section className="cart-btn">
             <Link to='/checkout'>
               <article className="cart-icon">
