@@ -19,7 +19,7 @@ const CreateBook = () => {
     var book_id = 901089;
     sendRequest({ ...value, book_id }, 'addbook', "POST").then(() => {
       setTimeout(() => {
-        // history.push('/');
+        history.push('/');
       }, 1500);
     })
   };
