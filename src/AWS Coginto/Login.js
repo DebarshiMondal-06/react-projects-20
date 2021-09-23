@@ -39,7 +39,7 @@ const Login = () => {
         <article style={{ textAlign: 'center', margin: '40px 0px' }}>
           <p className="login--text">Please login with any of Social Account.</p>
           <GoogleLogin
-            clientId="1072297356666-t00vvhrqcd8251g73or0t14n0gqjefd7.apps.googleusercontent.com"
+            clientId="1072297356666-tva1udka5ttkrlb6v5lece3ih0siug2d.apps.googleusercontent.com"
             render={renderProps => (
               <button onClick={renderProps.onClick} className="btn btn-info login--btn">Login With Google</button>
             )}
