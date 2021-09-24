@@ -16,7 +16,7 @@ const CreateBook = () => {
 
 
   const submit_data = () => {
-    var book_id = 901089;
+    var book_id = Math.floor(100000 + Math.random() * 900000);
     sendRequest({ ...value, book_id }, 'addbook', "POST").then(() => {
       setTimeout(() => {
         history.push('/');
