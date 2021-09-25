@@ -13,7 +13,6 @@ const Likes = ({ id }) => {
 
 
 
-
   const update_likes = (val) => {
     sendRequest({ count: val, book_id: id },'','PUT').then(() => {
       fetch_one(id);

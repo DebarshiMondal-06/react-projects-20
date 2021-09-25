@@ -15,6 +15,8 @@ export const sendRequest = async (data, path, method) => {
     secretAccessKey,
     sessionToken
   });
+
+  
   var url = `https://ot39qtb9rj.execute-api.ap-south-1.amazonaws.com/dev/${path}`;
   const request = await aws.sign(url, {
     method: method || 'PUT',

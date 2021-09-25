@@ -16,6 +16,8 @@ const Context = ({ children }) => {
   const DynamoDB = new AWS.DynamoDB.DocumentClient({
     credentials,
   });
+
+  
   const fetch_one = async (id) => {
     DynamoDB.get({
       TableName: "Book_Likes",
@@ -37,6 +39,8 @@ const Context = ({ children }) => {
         IdentityPoolId: 'ap-south-1:4979d70f-ee73-4f5d-b057-5af093b65404',
         Logins: {
           'api.twitter.com': twitter_data ? `${twitter_data.oauth_token};${twitter_data.oauth_token_secret}` : null,
+
+          
           'accounts.google.com': (res && data) ? res.tokenObj.id_token : null,
         }
       });
