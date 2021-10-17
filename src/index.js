@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './APP_SYNC_SITE/App';
+import App from './Image/Image';
 
 
 

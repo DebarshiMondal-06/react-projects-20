@@ -1,4 +1,3 @@
 node_modules
-src/1_**
-
+build
 .vercel
