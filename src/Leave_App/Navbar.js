@@ -11,7 +11,7 @@ const Navbar = () => {
 
 
   var item = JSON.parse(localStorage.getItem('users'))
-  var decoded_username = item['cognito:username'];
+  var decoded_username = item && item['cognito:username'];
 
 
 

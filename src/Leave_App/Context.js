@@ -8,6 +8,7 @@ const Context = ({ children }) => {
 
   const removeTokens = () => {
     localStorage.removeItem('tokens');
+    localStorage.removeItem('users');
     window.location.reload();
   };
 
