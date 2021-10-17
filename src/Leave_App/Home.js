@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Cards from './Components/Cards';
+import CreateRequest from './CreateRequest';
 import RequestCond from './ManageRequest/RequestCond';
 
 
@@ -18,27 +19,23 @@ const Home = () => {
   }, [loc]);
 
 
+
+
   return <section className="home">
-
-  
-
-    <Link to="/create-request">
-      <button className="btn btn-info">
-        Request Leave
-      </button>
-    </Link>
-    <div className="cards--section">
+    <div className="cards--section mb-3">
       <Cards />
     </div>
 
     <main className="request--table">
-      <article className="request--text">
-        <h2><NavLink className={`lists ${navLink ? 'list--color' : ''}`} to="/pending-request">Pending Requests</NavLink></h2>
-        <h2><NavLink className={`lists ${!navLink ? 'list--color' : ''}`} to="/all-request">All Requests</NavLink></h2>
+      <article className="row">
+        <div className="request--text col-md-3">
+          <h2><NavLink className={`lists ${navLink ? 'list--color' : ''}`} to="/pending-request">Pending Requests</NavLink></h2>
+          <h2><NavLink className={`lists ${!navLink ? 'list--color' : ''}`} to="/all-request">All Requests</NavLink></h2>
+        </div>
+        <CreateRequest />
       </article>
 
       <RequestCond />
-
     </main>
   </section>
 }

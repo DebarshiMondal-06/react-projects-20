@@ -1,45 +1,66 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import moment from "moment";
+
+
 
 const CreateRequest = () => {
 
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
+  const [dates, setDates] = useState({
+    startDate: '',
+    endDate: ''
+  });
+  const [noDays, setNoDays] = useState(0);
+  const { startDate, endDate } = dates;
+
+
+
+  useEffect(() => {
+    if (startDate && endDate) {
+      var from = moment(startDate)
+      var to = moment(endDate)
+      const noDays = to.diff(from, 'days');
+      noDays > 0 ? setNoDays(noDays) : setNoDays(0);
+    }
+  }, [startDate, endDate]);
+
+
 
   const submit_data = () => {
-
+    if (noDays > 0 && value) {
+      console.log(startDate, endDate);
+      console.log(value);
+    }
   }
 
 
-  return <section className="contact_main">
-    <form className="card shadow contact_card">
-      <h2>Contact Here</h2>
-      <section className="row mb-3">
-        <div className="col-md-6">
-          <label className="form-label">First</label>
-          <input type="text" className="form-control"
-            onChange={(e) => setValue({ ...value, firstname: e.target.value })} />
-        </div>
-        <div className="col-md-6">
-          <label className="form-label">Last</label>
-          <input type="text" className="form-control"
-            onChange={(e) => setValue({ ...value, lastname: e.target.value })} />
-        </div>
-      </section>
-      <div className="mb-3">
-        <label className="form-label">Email address</label>
-        <input type="email" className="form-control"
-          onChange={(e) => setValue({ ...value, email: e.target.value })} />
-      </div>
-      <div className="mb-3">
-        <label className="form-label">Message</label>
-        <textarea type="text" className="form-control"
-          onChange={(e) => setValue({ ...value, message: e.target.value })}></textarea>
-      </div>
-      <button type="button" className="btn btn-primary contact_btn"
-        onClick={() => submit_data()}>
-        Submit Here
-      </button>
-    </form>
-  </section>
+
+
+  return <div className="col-md-9 create--leave">
+    <span> <label>Start Date:</label> <input type="date" className="form-control"
+     value={startDate} onChange={(e) => setDates({ ...dates, startDate: e.target.value })} />
+    </span>
+    <span> <label>Last Date:</label><input type="date" className="form-control"
+      value={endDate} onChange={(e) => setDates({ ...dates, endDate: e.target.value })} />
+    </span>
+    <span> <label>Comment:</label> <input style={{ width: 300 }} type="text" className="form-control"
+      value={value} onChange={(e) => setValue(e.target.value)} />
+    </span>
+
+    <span className="text-center"> <label>No of Days:</label> <br /> <b style={{ fontSize: 28 }}>
+      {noDays}
+    </b> </span>&nbsp;
+    <button className="btn btn-info" onClick={() => submit_data()}>
+      <i className="fas fa-plus"></i>
+    </button>
+    <button className="btn btn-warning" onClick={() => {
+      setDates({ endDate: '', startDate: '' });
+      setValue('');
+      setNoDays(0);
+    }}>
+      <i className="fas fa-redo-alt"></i>
+    </button>
+  </div>
 }
 
 export default CreateRequest
