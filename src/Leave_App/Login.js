@@ -34,7 +34,7 @@ const Login = () => {
     <div className="text-center">
       <button className="btn" style={{ fontSize: 30, marginTop: '15%', textTransform: 'capitalize' }}>
         <a className="text-dark"
-          href="https://sandy.auth.ap-south-1.amazoncognito.com/login?client_id=2fb1blh9vfm0mn4ljlhp406hh4&response_type=token&redirect_uri=http://localhost:3000">
+          href="https://acdleaveapproval.auth.ap-south-1.amazoncognito.com/login?client_id=970g1b8h3a28f0ggkkfl06dau&response_type=token&redirect_uri=http://localhost:3000">
           Login here
         </a>
       </button>

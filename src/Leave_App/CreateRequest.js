@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import moment from "moment";
+import Axios from 'axios';
+import { GlobalContext } from './Context';
 
 
 
 const CreateRequest = () => {
-
+  const { token, get_user_info } = useContext(GlobalContext);
   const [value, setValue] = useState('');
   const [dates, setDates] = useState({
     startDate: '',
@@ -26,10 +28,37 @@ const CreateRequest = () => {
 
 
 
+  var item = JSON.parse(localStorage.getItem('users'))
+  var decoded_mail = item && item.email;
   const submit_data = () => {
-    if (noDays > 0 && value) {
-      console.log(startDate, endDate);
-      console.log(value);
+    if (noDays > 0 && value && token) {
+      const data = {
+        type: "requestLeave",
+        email: decoded_mail,
+        from: startDate,
+        to: endDate,
+        numberOfDays: noDays,
+        leavesTaken: 11,
+        reason: value
+      }
+      const url = 'https://scxe0v2q9j.execute-api.ap-south-1.amazonaws.com/Prod/requestLeave';
+      Axios({
+        method: 'POST',
+        url,
+        data,
+        headers: {
+          'Authorization': `${token}`,
+        }
+      }).then((el) => {
+        setDates({ startDate: '', endDate: '' });
+        setValue('');
+        setNoDays(0);
+        setTimeout(() => {
+          get_user_info(decoded_mail, token)
+        }, 1000);
+      }).catch((err) => {
+        // console.log(err);
+      })
     }
   }
 
@@ -38,7 +67,7 @@ const CreateRequest = () => {
 
   return <div className="col-md-9 create--leave">
     <span> <label>Start Date:</label> <input type="date" className="form-control"
-     value={startDate} onChange={(e) => setDates({ ...dates, startDate: e.target.value })} />
+      value={startDate} onChange={(e) => setDates({ ...dates, startDate: e.target.value })} />
     </span>
     <span> <label>Last Date:</label><input type="date" className="form-control"
       value={endDate} onChange={(e) => setDates({ ...dates, endDate: e.target.value })} />

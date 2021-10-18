@@ -19,7 +19,7 @@ const Home = () => {
   }, [loc]);
 
 
-
+  
 
   return <section className="home">
     <div className="cards--section mb-3">

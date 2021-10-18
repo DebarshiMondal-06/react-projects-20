@@ -11,9 +11,10 @@ body{
   position: relative;
 }
 .navbar-brand{
-  font-size: 25px;
+  font-size: 30px;
   margin-top: 10px;
-  padding: 20px;
+  padding: 0px 20px;
+  font-weight: bold;
 }
 .navbar--right-items{
   display: flex;
@@ -86,7 +87,7 @@ body{
 }
 .request--table .create--leave{
   display: flex;
-  gap: 1.5em;
+  gap: 1em;
   flex-direction: row;
   margin-top: -30px;
   flex-wrap: wrap;

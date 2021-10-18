@@ -16,10 +16,12 @@ const Navbar = () => {
 
 
 
+
+
   return <nav className="navbar navbar-expand-lg shadow-lg">
     <div className="container-fluid">
       <p className="navbar-brand">
-        <Link to="/pending-request">Leave</Link>
+        <Link to="/pending-request" className="text-dark">Leave</Link>
       </p>
       {
         loc.pathname !== '/' ? <article className="navbar--right-items">

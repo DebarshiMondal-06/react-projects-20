@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '../Context';
 import './Components.css';
 
 
 const Cards = () => {
+  const { data } = useContext(GlobalContext);
+
+
 
 
   const card_fun = (text, num, color) => {
@@ -27,8 +31,8 @@ const Cards = () => {
 
 
   return <div className="card--div row">
-    {card_fun('Total', 10, 'info')}
-    {card_fun('Pending', 2, 'warning')}
+    {card_fun('Total', data.log && data.log.length, 'info')}
+    {card_fun('Pending', data.pendingRequests && data.pendingRequests.length, 'warning')}
   </div>
 }
 
